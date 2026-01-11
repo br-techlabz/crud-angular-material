@@ -23,11 +23,13 @@ export class ClienteService {
   obterStorage() : Cliente[]{
 
     const repositorioClientes = localStorage.getItem(ClienteService.REPO_CLIENTES);  
+    
+    //Se o repositorio existir no Browser
     if (repositorioClientes){
       const clientes: Cliente[] = JSON.parse(repositorioClientes);
       return clientes;
     }
-
+    //Se nao cria o repositorio vazio
     const clientes: Cliente[] = [];
     localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(clientes));
     return clientes;
