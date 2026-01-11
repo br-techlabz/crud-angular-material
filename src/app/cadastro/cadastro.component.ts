@@ -30,4 +30,5 @@ export class CadastroComponent {
     this.service.salvar(this.cliente);
   }
 
+
 }
