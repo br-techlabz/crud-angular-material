@@ -13,6 +13,11 @@ export class ClienteService {
 
   salvar(cliente: Cliente){
     console.log(cliente);
+
+    const storage = this.obterStorage();
+    storage.push(cliente);
+
+    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
   }
 
   obterStorage() : Cliente[]{
