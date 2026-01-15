@@ -28,6 +28,7 @@ import { Cliente } from '../cadastro/cliente';
 })
 export class ConsultaComponent implements OnInit {
 
+  nomeBusca: string = '';
   listaClientes: Cliente[] = [];
   colunasTabela: string [] = ["id","nome","cpf","dataNascimento","email"];
 
@@ -38,5 +39,9 @@ export class ConsultaComponent implements OnInit {
   ngOnInit(){
     console.log("Passou por aqui")
     this.listaClientes = this.service.pesquisarClientes('');
+  }
+
+  pesquisar(){
+    this.listaClientes = this.service.pesquisarClientes(this.nomeBusca);
   }
 }
