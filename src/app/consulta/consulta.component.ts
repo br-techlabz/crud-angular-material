@@ -36,9 +36,7 @@ export class ConsultaComponent implements OnInit {
   constructor(
     private service: ClienteService,
     private router: Router
-  ){
-
-  }
+  ){ }
 
   ngOnInit(){
     console.log("Passou por aqui")
